@@ -126,48 +126,9 @@ var indepth_startBtn = function(){
 	 var scroller=-60;
 	 var top_ant=0;
 		 $(document).scroll(function () {
-			 var top_doc=$(document).scrollTop();
-			 var top_div=$('#suspenso_separador').position().top;
-			  var top_bruma=$('#bruma_separador').position().top;
 			 
-			 var top_test=$('#indepth_intro').position().top;
-			 
-			 if(!m_detect){
-					 //$("#indepth_parallax_back").css("background-position-y",  scroller + "px");
-				 }else{
-					 if(top_doc>=(top_test+5)){
-						 $('#indepth_cover_view').css("position","absolute");
-					 }else{
-						 $('#indepth_cover_view').css("position","fixed");
-					 }
-				 }
-			 
-			 var height_div=$('#indepth_anuncio_section').height();
-			 if(top_doc>=top_div-600 && top_doc<=top_div+height_div+600){
-			 	if(top_doc>=top_ant){
-			 		
-				 	scroller=scroller+2;
-				 	
-			 	}else{
-			 		if(scroller>=2){
-				 		scroller=scroller-2;
-			 		}
-				 	
-			 	}
-				// console.log(top_doc+">="+top_div);
-				 //console.log("scroller: "+scroller);
-				 if(!m_detect){
-					 //$("#indepth_parallax_back").css("background-position-y",  scroller + "px");
-				 }else{
-					 //("#indepth_parallax_back").animate({"background-position-y":  scroller + "px"},"100");
-					 
-				 }
-				 //$("#indepth_parallax_back").animate({"background-position-y":  scroller + "px"},"fast");
-				// $("#indepth_parallax_back").css("background-position-y",  scroller + "px");
-				 top_ant=top_doc;
-			 }
-		 })
- } 
+		 });
+ 	} 
  
   var detect_mobile=function(){
 	 var isMobile = {
@@ -220,30 +181,6 @@ var indepth_startBtn = function(){
  }
  
  function loadDisqus(source, identifier, url) {
-if (window.DISQUS) {
-   jQuery('#disqus_thread').insertAfter(source);
-   /** if Disqus exists, call it's reset method with new parameters **/
-
-    DISQUS.reset({
-  reload: true,
-  config: function () { 
-   this.page.identifier = identifier.toString();    //important to convert it to string
-   this.page.url = url;
-  }
- });
-} else {
-//insert a wrapper in HTML after the relevant "show comments" link
-	source.append('<div id="disqus_thread"></div>');
-   //jQuery('<div id="disqus_thread"></div>').insertAfter(source);
-   disqus_identifier = identifier; //set the identifier argument
-   disqus_url = url; //set the permalink argument
-   disqus_per_page=3;
-   //append the Disqus embed script to HTML
-   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-   dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-   jQuery('head').append(dsq);
-}
-
 
 };
 
@@ -761,14 +698,14 @@ $(document).ready(function(){
 		return false;
 	});
 	$(document).scroll(function () {
-		var godiv=$('.indepth_content_top').position().top;
+		/*var godiv=$('.indepth_content_top').position().top;
 		var div_cont=$("#body-wrapper").position().top;
 		var top_doc=$(document).scrollTop();
 		if(top_doc>=godiv && (div_cont-1000)>=top_doc){
 			$("#gototop").fadeIn();
 		}else{
 			$("#gototop").fadeOut();
-		}
+		}*/
 	})
 	
 
