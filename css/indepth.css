@@ -144,6 +144,7 @@
 	float: left;
 	width: 707px;
 	background-color: rgba(0,0,0,0.4);
+	display: none;
 }
 
 #indepth_cover #indepth_ver_texto{
@@ -190,6 +191,7 @@
 	padding: 7.5px 0px;
 	width: 103px;
 	background-color: rgba(0,0,0,0.4);
+	display: none;
 }
 
 #indepth_cover .indepth_date{
@@ -638,6 +640,17 @@
 	background-position: 50%;
 }
 
+#indepth_parallax_mid {
+	height: 100%;
+	background-size: cover;
+	background-color: #000;
+	top: 0px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: 50%;
+	background-image: url("../images/text_31.jpg");
+}
+
 #bruma_separador #indepth_parallax_back{
 	background-image: url("../images/Top_1.jpg");
 }
@@ -755,6 +768,10 @@
 
 #democracia_separador #indepth_parallax_back{
 	background-image: url("../images/top_30.jpg");
+}
+
+#_separador #indepth_parallax_mid{
+	background-image: url("../images/text_31.jpg");
 }
 
 
