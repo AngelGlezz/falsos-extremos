@@ -120,7 +120,7 @@
 
 /*Propio del indepth*/
 #indepth_cover_view{
-	height: 817px;
+	height: 820px;
 	position: fixed;
 	z-index: 0;
 	background: #000;
@@ -131,12 +131,12 @@
 }
 
 #indepth_cover{
-	height: 757px;
+	height: 820px;
 	background: none;
 }
 
 #indepth_cover .indepth_page_body{
-	top:320px;
+	top: 700px;
 	position: relative;
 }
 
@@ -144,7 +144,6 @@
 	float: left;
 	width: 707px;
 	background-color: rgba(0,0,0,0.4);
-	display: none;
 }
 
 #indepth_cover #indepth_ver_texto{
@@ -191,7 +190,6 @@
 	padding: 7.5px 0px;
 	width: 103px;
 	background-color: rgba(0,0,0,0.4);
-	display: none;
 }
 
 #indepth_cover .indepth_date{
@@ -761,8 +759,8 @@
 	background-image: url("../images/top_28.jpg");
 }
 
-#caos_separador #indepth_parallax_back{
-	background-image: url("../images/top_29.jpg");
+#meritocracia_s #indepth_parallax_back{
+	background-image: url("../images/top_32.jpg");
 }
 
 #democracia_separador #indepth_parallax_back{
