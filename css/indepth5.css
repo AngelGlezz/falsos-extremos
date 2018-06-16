@@ -218,7 +218,7 @@
 }
 
 #indepth_intro .indepth_text{
-	font-size:18px; /*tamaÃ±o de texto*/
+	font-size:18px; /*tamaño de texto*/
 	font-family: 'robotoregular';  /* nombre de la fuente */
 	color: #535535; /* color del texto */
 	width:100%;
@@ -394,7 +394,7 @@
 
 /*ajustes del titulo*/
 .indepth_page_content .indepth_title{
-	font-size:38px;   /* tamaÃ±o */
+	font-size:38px;   /* tamaño */
 	font-family: 'roboto_condensedbold'; /* fuente */
 	text-transform: uppercase; /* comentar para quitar mayusculas */
 	text-align: center; /* ajustar alineacion (justify, left, right o center) */	
@@ -402,7 +402,7 @@
 }
 
 .indepth_page_content .indepth_day{
-	font-size:19px;   /* tamaÃ±o */
+	font-size:19px;   /* tamaño */
 	font-family: 'robotolight'; /* fuente */
 	text-transform: uppercase; /* comentar para quitar mayusculas */
 	text-align: center; /* ajustar alineacion (justify, left, right o center) */	
@@ -410,7 +410,7 @@
 }
 
 .indepth_page_content .indepth_author_title{
-	font-size:19px;   /* tamaÃ±o */
+	font-size:19px;   /* tamaño */
 	font-family: 'robotolight'; /* fuente */
 	text-align: center;
 	color: #494949;
@@ -436,14 +436,14 @@
 }
 
 .indepth_page_content .indepth_text{
-	font-size:19px; /* tamaÃ±o */
+	font-size:19px; /* tamaño */
 	font-family: 'robotoregular'; /* nombre de la fuente */
 	color: #535252; /* color de la fuente*/
 	text-align:justify; /* ajustar alineacion (justify, left, right o center) */
 }
 
 .indepth_page_content .indepth_subtitle{
-	font-size:22px; /* tamaÃ±o */
+	font-size:22px; /* tamaño */
 	font-family: 'robotoregular'; /* nombre de la fuente */
 	color: #C3BD5B; /* color de la fuente*/
 }
