@@ -664,7 +664,7 @@
 	background-image: url("../images/text_31.jpg");
 }
 
-#meritocracia_s #indepth_parallax_mid{
+#meritocracia #indepth_parallax_mid{
 	background-image: url("../images/text_32.jpg");
 }
 
@@ -805,16 +805,33 @@
 	background-color: rgba(255,255,255,0) 
 }	
 
-.indepth_page_content .indepth_content_footer .indepth_bio {
- width: 100%;
- }
- 
- #indepth_cover_view .indepth_background{
-		left: -9599px;
+	.indepth_page_content .indepth_content_footer .indepth_bio {
+		width: 100%;
 	}
-	
-	
 
+	#elogio #indepth_parallax_mid {
+	    background-size: 100%;
+	    background-attachment: initial;
+	}
+
+	.elo_back {
+		max-height: 230px;
+	}
+
+	#indepth_cover .indepth_page_body {
+	    top: 500px;
+	    position: relative;
+	}
+
+	#indepth_cover {
+    	height: 570px;
+	}
+
+	#indepth_cover_view .indepth_background {
+	    left: -10000px;
+	    top: -10246px;
+	    height: 570px;
+	}
 }
 
 
@@ -849,7 +866,7 @@
 	}
 	
 	#indepth_cover{
-		height: 640px;	
+		height: 342px;
 	}
 	
 	#indepth_cover .indepth_title{
@@ -864,18 +881,15 @@
 	
 	#indepth_cover_view .indepth_background{
 		display: block;
-		right: -9610px;
-		height: 640px;
-		bottom: -9809px;
-		max-width: 1920px; 
+		right: -9996px;
+		height: auto;
+		bottom: -9770px;
+		max-width: 1920px;
+		width: 800px;
 	}
 	
-
-	
-
-	
 	#indepth_cover .indepth_page_body{
-		top:540px;
+		top: 286px;
 	}
 	
 	#indepth_intro .indepth_authors .indepth_authors_container{
@@ -1078,9 +1092,19 @@ background-color: white;
 	
 }
 
+	.elo_back {
+		max-height: 160px;
+	}
+}
 
+@media screen and (max-width: 364px) {
+	.elo_back {
+		max-height: 160px;
+	}
 
-
+	#elogio #indepth_parallax_mid {
+    	background-size: 145%;
+	}
 }
 
 /*
