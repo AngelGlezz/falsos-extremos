@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
-		<meta charset="utf-8">
+		<meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UQAFWF9aGwYHV1JQBQU="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 		<style>
 			html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
@@ -17,7 +17,7 @@
 		</style>
 	</head>
 	<body>
-			<link type="text/css" rel="stylesheet" href="css/indepth6.css?v=1.0.32"/>
+			<link type="text/css" rel="stylesheet" href="css/indepth7.css?v=1.0.32"/>
 			<link type="text/css" rel="stylesheet" href="css/fonts.css"/>
 		<div class="indepth_pages">
 		<div id="gototop"></div>
@@ -57,7 +57,7 @@
 							<img src="images/IMG LogoFalsosIntro.png" alt="IMG LogoFalsosIntro" >
 						</div>
 						<div class="indepth_text">
-							Cada cuatro a�os en JuanFutbol los Falsos extremos se juntan. Son creativos, explosivos, quieren la pelota, saben tratarla y ponerla en las redes. Leen el partido y lo rompen cuando la duda chispea en la mirada del rival. Uno por fecha, Fadanelli, Ortu�o, Oliveira, Tizano, Jonguitud y Rabasa, saltar�n con sus textos mundialeros a la cancha.  
+							Cada cuatro años en JuanFutbol los Falsos extremos se juntan. Son creativos, explosivos, quieren la pelota, saben tratarla y ponerla en las redes. Leen el partido y lo rompen cuando la duda chispea en la mirada del rival. Uno por fecha, Fadanelli, Ortuño, Oliveira, Tizano, Jonguitud y Rabasa, saltarán con sus textos mundialeros a la cancha.  
 						</div>
 
 						<div class="indepth_authors">
@@ -65,10 +65,10 @@
 								
 								<div class="indepth_author" id="antonio" num="0">
 									<div class="indepth_author_img"></div>
-									<p>Antonio Ortu�o</p>
+									<p>Antonio Ortuño</p>
 									<!--div style="top: 195px;left: 142px;padding-bottom:5px;" id="menu_kyzza_0" class="indepth_author_menu">
 							<div class="indepth_more_cont"> <div class="indepth_more_c" ir="deriva"><div class="indepth_mini_ball"><img src="images/jugador.jpg" alt="nino_ventana" class="w"></div><div class="indepth_mini_title">Futbol, Deriva</div> </div></div>
-							<div class="indepth_more_cont"> <div class="indepth_more_c" ir="mundial-melancolia"><div class="indepth_mini_ball"><img src="images/perro.jpg" alt="nino_ventana" class="w"></div><div class="indepth_mini_title">Mundial-Melancol�a</div></div> </div>
+							<div class="indepth_more_cont"> <div class="indepth_more_c" ir="mundial-melancolia"><div class="indepth_mini_ball"><img src="images/perro.jpg" alt="nino_ventana" class="w"></div><div class="indepth_mini_title">Mundial-Melancolía</div></div> </div>
 							<div class="indepth_more_cont"> <div class="indepth_more_c" ir="gritos"><div class="indepth_mini_ball"><img src="images/text_16.jpg" alt="nino_ventana" class="h"></div><div class="indepth_mini_title">Gritos</div></div> </div>
 							<div class="indepth_more_cont"> <div class="indepth_more_c" ir="perdedor"><div class="indepth_mini_ball"><img src="images/text_22.jpg" alt="nino_ventana" class="h"></div><div class="indepth_mini_title">Soy un perdedor</div></div> </div>
 							<div class="indepth_more_cont"> <div class="indepth_more_c" ir="infantes"><div class="indepth_mini_ball"><img src="images/text_28.jpg" alt="nino_ventana" class="w"></div><div class="indepth_mini_title">Infantes Mutilados</div></div></div>
@@ -89,7 +89,7 @@
 									<P>Guillermo Fadanelli</P>
 									<!--div style="top: 195px;left: 452px;padding-bottom:5px;" id="menu_javier_0" class="indepth_author_menu">
 							<div class="indepth_more_cont"> <div class="indepth_more_c" ir="el-mundial-del-suspenso"><div class="indepth_mini_ball"><img src="images/text_2.jpg" alt="nino_ventana" class="h"></div><div class="indepth_mini_title">EL Mundial del suspenso</div> </div></div>
-							<div class="indepth_more_cont"> <div class="indepth_more_c" ir="anecdoticos"><div class="indepth_mini_ball"><img src="images/foto_9.jpg" alt="nino_ventana" class="h" style="margin-left:-17px;"></div><div class="indepth_mini_title">Los anecd�ticos</div></div> </div>
+							<div class="indepth_more_cont"> <div class="indepth_more_c" ir="anecdoticos"><div class="indepth_mini_ball"><img src="images/foto_9.jpg" alt="nino_ventana" class="h" style="margin-left:-17px;"></div><div class="indepth_mini_title">Los anecdóticos</div></div> </div>
 							<div class="indepth_more_cont"> <div class="indepth_more_c" ir="memorial"><div class="indepth_mini_ball"><img src="images/text_15.jpg" alt="nino_ventana" class="h" ></div><div class="indepth_mini_title">Memorial del Tedio</div></div> </div>
 							<div class="indepth_more_cont"> <div class="indepth_more_c" ir="enemigo"><div class="indepth_mini_ball"><img src="images/text_21.jpg" alt="" class="h" ></div><div class="indepth_mini_title">El enemigo elegido</div></div> </div>
 							<div class="indepth_more_cont"> <div class="indepth_more_c" ir="novelas"><div class="indepth_mini_ball"><img src="images/text_27.jpg" alt="" class="w" ></div><div class="indepth_mini_title">Novelas posibles</div></div> </div>
@@ -112,19 +112,19 @@
 								</div>
 								<div class="indepth_author" id="luis" num="0">
 									<div class="indepth_author_img"></div>
-									<p>Luis Mu�oz Oliveira</p>
+									<p>Luis Muñoz Oliveira</p>
 									<!--div style="top: 375px;left: 375px;padding-bottom:5px;" id="menu_rodrigo_0" class="indepth_author_menu">
 								<div class="indepth_more_cont"> <div class="indepth_more_c" ir="Trescuartistas"><div class="indepth_mini_ball"><img src="images/periodista.jpg" alt="nino_ventana" class="h"></div><div class="indepth_mini_title">Trescuartistas</div> </div></div>
-								<div class="indepth_more_cont"> <div class="indepth_more_c" ir="mall"><div class="indepth_mini_ball"><img src="images/text_13.jpg" alt="nino_ventana" class="h"></div><div class="indepth_mini_title">Las entra�as del mall</div> </div></div>
+								<div class="indepth_more_cont"> <div class="indepth_more_c" ir="mall"><div class="indepth_mini_ball"><img src="images/text_13.jpg" alt="nino_ventana" class="h"></div><div class="indepth_mini_title">Las entrañas del mall</div> </div></div>
 								<div class="indepth_more_cont"> <div class="indepth_more_c" ir="especialista"><div class="indepth_mini_ball"><img src="images/text_26.jpg" alt="nino_ventana" class="h"></div><div class="indepth_mini_title">El especialista</div> </div></div>
-								<div class="indepth_more_cont"> <div class="indepth_more_c" ir="seacabo"><div class="indepth_mini_ball"><img src="images/text_31.jpg" alt="nino_ventana" class="h"></div><div class="indepth_mini_title">Se acab�</div> </div></div>
+								<div class="indepth_more_cont"> <div class="indepth_more_c" ir="seacabo"><div class="indepth_mini_ball"><img src="images/text_31.jpg" alt="nino_ventana" class="h"></div><div class="indepth_mini_title">Se acabó</div> </div></div>
 								
 								</div-->
 									
 								</div>
 								<div class="indepth_author" id="rodri" num="0">
 									<div class="indepth_author_img"></div>
-									<p>Rodrigo M�rquez Tizano</p>
+									<p>Rodrigo Márquez Tizano</p>
 									<!--div style="top: 405px;left: 528px; padding-bottom:5px;" id="menu_rafa_0" class="indepth_author_menu">
 								<div class="indepth_more_cont"> <div class="indepth_more_c" ir="con_un_huevo"><div class="indepth_mini_ball"><img src="images/robben.jpg" alt="nino_ventana" class="w"></div><div class="indepth_mini_title">Con un huevo</div> </div></div>
 								<div class="indepth_more_cont"> <div class="indepth_more_c" ir="sin_brasil"><div class="indepth_mini_ball"><img src="images/text_19.jpg" alt="nino_ventana" class="h"></div><div class="indepth_mini_title">Brasil sin Brasil</div> </div></div>
@@ -138,13 +138,14 @@
 
 					</div>
 				</div>
-				<div id="elogio" class="indepth_page_content image_quote_4 indepth_content_top">
+
+				<div id="perder" class="indepth_page_content image_quote_4 indepth_content_top">
 					<div class="indepth_page_body" >
 						<div class="indepth_content_header">
-							<div class="indepth_day">JUNIO 16</div>
+							<div class="indepth_day">JUNIO 18</div>
 							<div class="indepth_title_line"></div>
-							<div class="indepth_title">Elogio del juego indiferente</div>
-							<div class="indepth_author_title">por Antonio Ortu�o</div>
+							<div class="indepth_title">Por el amor a perder</div>
+							<div class="indepth_author_title">por Rodrigo Márquez Tizano</div>
 						</div>
 						<div class="indepth_home-element-social">
 							<a href="http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#indepth_coments_31">
@@ -155,22 +156,176 @@
 								<div class="home-element-social-share-short">
 													</div>
 							</a>
-							<a href="javascript:sharePopUp('tw', 'https://twitter.com/share?via=juanfutbol&text=Se% acab� - Falsos Extremos una reflexi�n de Rodrigo M�rquez Tizano (@rmtizano)&url=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo');">
+							<a href="javascript:sharePopUp('tw', 'https://twitter.com/share?via=juanfutbol&text=Se% acabó - Falsos Extremos una reflexión de Rodrigo Márquez Tizano (@rmtizano)&url=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo');">
 								<div class="home-element-social-tweet-short">
 													</div>
 							</a>
-							<a href="mailto:?subject='Se acab� - Falsos Extremos una reflexi�n de Rodrigo M�rquez Tizano ', historia compartida desde juanfutbol&body=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo">
+							<a href="mailto:?subject='Se acabó - Falsos Extremos una reflexión de Rodrigo Márquez Tizano ', historia compartida desde juanfutbol&body=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo">
 								<div class="home-element-social-email"></div>
 							</a>
 						</div>
 						<div class="indepth_text_container">
 							
 							<div class="indepth_text">
-								<div class="indepth_quote" style="font-size:23px;"><div class="indepth_quote_out"><div class="indepth_quote_in">Lo que m�s disfruto del Mundial es justamente lo que otros, esos fan�ticos de espuma en la boca y manos crispadas, odian: los juegos de primera ronda en los que no te importan los contendientes</div></div></div>
+								<div class="indepth_quote" style="font-size:23px;"><div class="indepth_quote_out"><div class="indepth_quote_in">Estoy seguro, esta victoria histórica no sólo formará parte de nuestra memoria colectiva, sino que, además, será un antídoto para aplacar esa manía que tenemos de perder por adelantado. Ayer la selección mexicana traicionó nuestra hambre de derrota. Linda traición esa que la luz potente, cegadora, no nos deja anticipar</div></div></div>
 
-								Uno de mis primeros recuerdos del Mundial proviene de Espa�a 82. En una de las semifinales, Francia y Alemania empataron 3-3 y se fueron a penales. Aquel juego es merecidamente famoso. Alemania se fue abajo en los tiempos extra 3-1 y empat� con uno de sus acostumbrados alardes de esp�ritu guerrero. En los penales sobrevino el drama. Stielike, de Alemania, fall� un lanzamiento. La c�mara se qued� fija en sus lloriqueos. Mientras, Francia erraba a su vez, fuera de c�mara (el portero Harald Schumacher, que durante el partido agredi� impunemente al delantero galo Battiston, se visti� de h�roe, tap�ndole tiros a Six y a Bossis). Gan� Alemania, al final. De tanta tensi�n como hab�a en el aire, me puse a llorar como un bendito: estaba por cumplir seis a�os. Las selecciones de Alemania y Francia nunca me han simpatizado, pero el drama de la cancha me posey�. Rara vez he llorado tanto, en el resto de la vida, por cosas que de verdad me importaran.
+								En una entrevista transmitida por ESPN el 11 de junio, David Faitelson discute con Javier Hernández sobre las posibilidades del combinado mexicano en Rusia 2018: &quot;Tu hablas de ser Campeón del Mundo, Javier, pero, vamos pongámonos serios, México no está para Campeón del Mundo&quot;, dice el comentarista, terrenal, ante la mirada de Hernández, primero atónita y luego enfurecida, o enfureciendo, de 0 a 100 en apenas tres segundos. &quot;Y por qué no podemos ser el Grecia de la Eurocopa, el Leicester de la Premier?&quot;, responde el 14, mientras se apropia del micrófono y revira el inquisitorio. &quot;Imaginémonos cosas chingonas, carajo, imaginemos, échenle, ¿por qué no podemos pasar en primero de grupo?&quot;. A lo que Faitelson, como un buda hinchado pero igualmente famélico, sentencia:  &quot;Por Dios, Javier, ¿en primero? Alemania tiene el grupo asegurado&quot;. No nos engañemos: hoy todos somos Zague y le decimos de vuelta Profe a Osorio - casi imitando ese acento dulce del eje cafetalero—, y HH nos parece más guapo que Oribe, pero hace apenas apenas dos días no éramos más optimistas que aquel Faitelson que suda el maquillaje bajo las luces de un set. 
+
 								<br><br>
-								Quiz� por las secuelas de aquella tragedia, abomino de los juegos importantes: los de mis equipos y los de eliminaci�n directa. Los veo, si no me queda m�s remedio, callado, resignado y sufriente, como si se tratara de una penitencia. Estoy convencido de que cada eliminaci�n de M�xico en octavos de final, Mundial con Mundial, me cuesta al menos un a�o de vida en sobresaltos, amarguras y depresi�n. Fuera de mi selecci�n, mi afecto est� con Espa�a, el pa�s de mi madre. La final de Sud�frica 2010 la vi pasar ante mis ojos como ha de haber visto San Juan ocurrir el Apocalipsis en su isla de Patmos: desencajado y tembloroso. En los tiempos extra no pude m�s y me sal� a dar vueltas a la calle (unos vecinos, que le iban a Holanda, daban tanta lata con sus gritos que aquello hubiera podido acabar a golpes). El golazo de Iniesta con que Espa�a triunf� lo vi en la tele de la miscel�nea de la vuelta y lo celebr�, antes que nadie, con don Pacho, el tendero.
+								Mis primeros recuerdos de la selección mexicana en un Mundial: Centro de Galindo al 87, desde la banda derecha, con el marcador en contra por la mínima, un balón dividido que le cae a Ramón quien amaga una, dos veces, y ya con la defensa noruega encima y el ángulo de tiro reducido, decide centrar para la cabeza loca de Zague. El poste. Claudio recupera un balón en el mediocampo irlandés y cede a Luis García, que ha bajado hasta el círculo central para participar de la jugada, luego el toque retrasado de Hermosillo para que el mismo García la mande a guardar. Otra vez Hermosillo como torre y sujeción, y Marcelino, luego de amagar ligeramente con la zurda para sacarse la barrida de Signori, se acomoda la pelota con la diestra y conecta, a media distancia, apenas un par de metros luego del límite del área grande,  el alambrazo que va a alojarse en un resquicio del arco que defiende Marchegiani. Balakov coloca el balón sobre la mancha de cal: luego camina hasta la media luna, mira un segundo hacia las tribunas, después al balón, otra vez a las tribunas o quizá a algo que está detrás de ellas, imperceptible, hace todo lo posible por no mirar la portería, por no delatar la trayectoria de su disparo, y finalmente arranca, con el impulso, y cruza el cuero hasta ese punto que nadie, salvo Campos, sabe cuál es. El cansancio, la sed, el sol tremendo de Nueva York en verano. Los tiros que el mismo Bernal, el Beto y Jorge Rodríguez cedieron. Los cambios archivados de Mejía Barón. Almaceno con cierta nostalgia los peores momentos que mi filiación futbolera me ha hecho pasar aunque ahora, al enumerarlos y mezclarlos de manera aleatoria con los buenos y también con los menos malos, sin apenas otro orden que el cronológico, caigo en cuenta de que la nitidez de las pequeñas victorias es insuperable, por más que la brújula de la memoria haya sido siempre calibrada por el fracaso y sus tenebras.
+								</div>
+						</div>
+					</div>
+				</div>
+				<div id="perder" class="indepth_anuncio_section indepth_page elo_back"  resize="false">
+					<div id="indepth_parallax_mid"></div>
+				</div>
+				<div id="perder" class="indepth_page_content image_quote_4 indepth_content_top">
+					<div class="indepth_page_body" >
+						<div class="indepth_text_container">
+							<div class="indepth_text">
+							El derrotismo no es un cálculo histórico sino predictivo. En la memoria compuesta del aficionado rara vez aparecen primero los resabios de las derrotas pasadas porque, antes que cualquier otra cosa, desfilan las derrotas por venir. Casi como un trámite. Casi como el partido de ayer: una goliza de trámite. Como oráculos de nuestra propia desgracia, nos anticipamos a los hechos. Así, por el amor a perder. Un amor, por cierto, correspondido casi siempre por las circunstancias.
+							<br><br>
+
+							Nadie pudo haber presagiado una victoria como la que el día de ayer consiguió la selección mexicana frente a Alemania, salvo los mismos jugadores. Nadie pudo anticipar las verticales afiladas del Chucky, su frialdad para recortar a Özil y herir a Neuer en su propio palo. Nadie imaginó que Herrera y Guardado, recién recuperados de distintos males, saldrían a hacer del mediocampo un cuadrado íntimo, diminuto. Nadie pensó que Vela, al que se suele acusar de apático, tendría los arrestos para dejar que su clase le saliera por las grietas. Quizá Osorio, pero nadie más. Tribuna y prensa llevamos escuchando durante meses esa cantaleta de &quot;México, Campeón del Mundo&quot;, como una especie de eslogan ideado en las libretitas de espiral, una frase escrita con plumas de dos colores que no tenía cabida en otro mundo que no fuera ese en el que el colombiano es amo y señor, el de las ideas rotatorias al ras de un césped que por lo general suele &quot;traicionar&quot; las ilusiones del aficionado. Pero rara vez reparamos en que no se puede traicionar lo que ya se ha dado por perdido. Lo que tal vez nunca existió. Apenas comenzamos este recorrido, cierto, pero si había una mejor forma de comenzar nadie la imaginó tampoco. Porque si alguna vez nos traicionó este equipo fue ayer, cuando no había un solo mexicano que, en el fondo, no se sintiera derrotado de antemano. Y estoy seguro, esta victoria histórica no sólo formará parte de nuestra memoria colectiva, sino que, además, será un antídoto para aplacar esa manía que tenemos de perder por adelantado. Ayer la selección mexicana traicionó nuestra hambre de derrota. Linda traición esa que la luz potente, cegadora, no nos deja anticipar. 
+							</div>
+							<div class="indepth_content_footer">
+								<div class="indepth_author" id="paulette" num="4">
+									<div class="indepth_author_img"></div>
+									<p>Rodrigo Márquez Tizano</p>
+								</div>
+							<div class="indepth_bio">
+								(Distrito Federal, 1984) Narrador, editor y profesor. Su último libro es Yakarta(Sexto Piso, 2016). Es maestro por la Universidad de Nueva York. Edita la revista VICE y forma parte de La Dulce Ciencia Ediciones, sello editorial dedicado al mundo del boxeo.
+							</div>
+						</div>
+						<!-- comments -->
+					    <div id="facebook_thread" style="background-color: #fff; margin-top: 20px;">
+					    	<div class="fb-comments" data-href="http://juanfutbol.com/indepth/falsos-extremos-31" data-numposts="5" data-width="100%" data-colorscheme="light"></div>
+					    </div>
+					     <!-- comments -->
+						</div>
+					</div>
+				</div>
+				<div id="perder_s" class="indepth_anuncio_section indepth_page"  resize="false">
+					<div id="indepth_parallax_back" ></div>
+				</div>
+
+				<div id="pregunta" class="indepth_page_content image_quote_4 indepth_content_top">
+					<div class="indepth_page_body" >
+						<div class="indepth_content_header">
+							<div class="indepth_day">JUNIO 17</div>
+							<div class="indepth_title_line"></div>
+							<div class="indepth_title">En el futbol la pregunta no es quién lo hizo sino quién va a hacerla</div>
+							<div class="indepth_author_title">por Paulette Jonguitud</div>
+						</div>
+						<div class="indepth_home-element-social">
+							<a href="http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#indepth_coments_31">
+								<div class="home-element-social-comments-short">
+													</div>
+							</a>
+							<a href="javascript:sharePopUp('fb', 'https://www.facebook.com/sharer.php?s=100&p[images][0]=http://s3.amazonaws.com/stadium-azteca/page/66bf9cfb-d0b3-4698-b6ad-2052267a76b7/final/images/Top_1.png&p[url]=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo');">
+								<div class="home-element-social-share-short">
+													</div>
+							</a>
+							<a href="javascript:sharePopUp('tw', 'https://twitter.com/share?via=juanfutbol&text=Se% acabó - Falsos Extremos una reflexión de Rodrigo Márquez Tizano (@rmtizano)&url=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo');">
+								<div class="home-element-social-tweet-short">
+													</div>
+							</a>
+							<a href="mailto:?subject='Se acabó - Falsos Extremos una reflexión de Rodrigo Márquez Tizano ', historia compartida desde juanfutbol&body=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo">
+								<div class="home-element-social-email"></div>
+							</a>
+						</div>
+						<div class="indepth_text_container">
+							
+							<div class="indepth_text">
+								<div class="indepth_quote" style="font-size:23px;"><div class="indepth_quote_out"><div class="indepth_quote_in">Quiero pensar en CR7 y no en polonio 210, quiero saber cómo llegan los ingleses a la Arena Volgograd en lugar de leer que Reino Unido expulsa a diplomáticos rusos por un supuesto ataque con un gas nervioso. Un merecido descanso del mundo nos llega cada cuatro años y, en colectivo, vamos a aprovecharlo</div></div></div>
+
+								La puerta de su departamento estaba abierta. Luke Harding, periodista inglés del diario The Guardian, llevaba tres meses en Rusia encargado de la oficina de esa publicación en Moscú, cuando una noche al regresar a casa vio que la puerta no tenía echado el cerrojo. Pidió a sus hijos que esperaran en el pasillo y entró solo. Recorrió el espacio con la mirada: ropa de los niños sobre los sillones, juguetes en la mesa, libros en el piso esperando la compra de un librero; todo como lo habían dejado horas antes. Caminó hasta la habitación de sus hijos y sintió un temblor helado subirle por las manos. La ventana estaba abierta. No emparejada, no se había quedado mal cerrada: estaba totalmente abierta. Si algo sabía Harding era que esa ventana no se abría nunca, siendo padre de dos niños pequeños tenía muy claro el peligro de que uno de ellos cayera hacia su muerte desde el décimo piso en el que se encontraban. Los seguros blancos que él mismo había instalado sólo podían liberarse desde dentro. Aun así: la ventana estaba abierta. 
+								<br>¿Nos robaron?, preguntó uno de los niños.
+
+								<br><br>
+								Harding iba a revisar el resto del departamento cuando un ruido llamó su atención. Sobre una mesita encontró una vieja grabadora dentro de la que giraba la cinta de un casete. Los niños seguían afuera. Su esposa estaba de viaje. La cinta silbaba en el silencio invernal del departamento moscovita. Aquel casete duraba media hora por cada lado. Supo así que los intrusos acababan de marcharse.
+								<br><br>
+
+								No era un allanamiento común, todo estaba en su sitio, no faltaba ni un centavo de los miles de dólares en efectivo que Harding guardaba con descuido en el cajón de la cocina, junto a las espátulas. Los intrusos habían estado ahí para hacerle llegar un mensaje: podemos entrar cuando queramos; podemos volver cuando nos dé la gana. Habían entrado por la puerta principal y quizá escondido algunos micrófonos en el departamento. Para Harding eso era lo de menos, incluso hasta lo esperaba, pero habían entrado al cuarto de sus hijos; habían estado entre sus camas y liberado los seguros de la única ventana en esa habitación. Harding comprendió el perverso simbolismo de aquel acto. Mensaje recibido. Días antes su nombre había encabezado un artículo en The Guardian que el gobierno ruso encontraba muy incómodo y aquel allanamiento, supo, era su respuesta. Este pasaje es el inicio del libro Mafia State, en el que Harding narra su experiencia como periodista en Moscú, bajo un régimen que opera con sus propias reglas; los hechos que describe en el texto hacen pensar en el novelista Raymond Chandler, a la rusa, con Luke Harding jugando el papel del detective y de la víctima, un investigador como Philip Marlowe pero con dos hijos y una esposa que se juegan la libertad y hasta la vida.
+								<br><br>
+
+								De Rusia suelen llegarnos noticias a la Chandler donde lo que está en riesgo es el pellejo de mucha gente; espías encubiertos que cruzan informaciones en la banca de un parque; falsos culpables; ex oficiales envenenados con tazas de té radiactivas. Sin ir más lejos, en mayo de este año y con la Copa del Mundo a punto de empezar, se difundió el caso del periodista ruso Arkady Babchenko, disidente y exiliado en Ucrania, cuya muerte a la entrada de su casa, víctima de un asesinato con todas las trazas de haber sido llevado a cabo por profesionales, fue anunciada en la prensa internacional y pronto circularon fotos de Babchenko desplomado boca abajo en el charco de sangre resultante de tres balazos en la espalda. Nadie dudó de la veracidad de esa noticia. El asesinato de periodistas es acontecimiento común en tierras rusas, aunque no tanto como en suelo mexicano. Con la noticia del atentado contra Babchenko, todos recordamos la muerte de la periodista Anna Politovskaya, en 2006, asesinada cuando entraba a su edificio en Moscú. Sólo que en este caso la cosa se pone chandleresca, o más aún, sherlockiana, pues unos días después del anuncio del asesinato de Babchenko y cuando el Primer Ministro de Ucrania había señalado al gobierno ruso como posible culpable, el servicio de seguridad ucraniano convocó a una rueda de prensa para dar detalles del atentado en contra de Babchenko y quién sino él mismo, vivo, calvo y vestido con una sudadera negra con la leyenda journey  (casual indicador de su travesía de la vida a la muerte y de regreso) apareció frente a las cámaras ante los gritos de sorpresa de los periodistas que tenían frente a sí a un colega cuya pérdida ya todos habían llorado. En esa conferencia escucharon a Babchenko explicar que el gobierno de Ucrania había descubierto una conspiración para matarlo y habían decidido fingir su muerte para capturar al asesino; Babchenko se cubrió el pecho de sangre de cerdo, dejó que le pusieran coágulos de la misma sangre en los agujeros de la camiseta y se acostó en el charco previamente preparado a que le hicieran la foto que todos hemos visto: su cuerpo tirado en el suelo con tres agujeros en la espalda. La operación resultó en el arresto de dos personas, hasta el momento en que escribo esto. Ante la ola de críticas y cuestionamientos éticos sobre fingir la muerte de un periodista, el Primer Ministro de Ucrania admitió, según un artículo publicado en The Guardian, que el engaño había podido herir la susceptibilidad de algunas personas pero que incluso Sherlock Holmes había fingido varias veces su muerte para resolver los crímenes más complejos. Babchenko fue también muy criticado por sus colegas quienes le acusaron de desvirtuar la lucha del gremio por detener los crímenes en su contra y él contraatacó diciendo: me avisaron que iban a matarme y yo hice lo necesario para sobrevivir.
+								<br>A mí, que soy lectora de a pie y no sigo las noticias rusas más allá de las que alcanzan titulares de este lado del mundo, hasta hace unos días al pensar en Rusia me venían a la cabeza Babchenko y Luke Harding; tazas de té contaminadas con polonio 210; persecución a disidentes; posibles golden showers y, sobre todo, aquella reunión en Trump Tower que desató la investigación que le costó el puesto a James Comey, ex director del FBI. Todas estas historias de persecución en las que la gente real es la que se desploma.
+								</div>
+						</div>
+					</div>
+				</div>
+				<div id="pregunta" class="indepth_anuncio_section indepth_page elo_back"  resize="false">
+					<div id="indepth_parallax_mid"></div>
+				</div>
+				<div id="pregunta" class="indepth_page_content image_quote_4 indepth_content_top">
+					<div class="indepth_page_body" >
+						<div class="indepth_text_container">
+							<div class="indepth_text">
+								<span class="indepth_title">El mundial todo lo cambia y si no lo cambia, lo suspende</span><br><br>
+							Con la ceremonia de inauguración la historia se desdobla, se divide en dos rutas paralelas; por un camino corren las noticias que nos duelen y por el otro avanzan los misterios de noventa minutos que a todos nos apasionan y en los que nadie, o casi nadie, muere. (Escribo esto y pienso en el colombiano Andrés Escobar en el 94) Misterios en los que está en juego el sudor y la esperanza colectiva, no las libertades políticas, los derechos humanos o la vida de los niños. Y eso se agradece. Al menos yo, en este verano de pesadilla mexicana, quiero escuchar salir de Rusia historias de campeones de goleo y si hay sangre que sea en la ceja de Raphaël Varane por un cabezazo defensivo o en los muslos del seleccionado iraní Ramin Rezaeian por una barrida fuerte pero necesaria.
+							<br><br>
+
+							Quiero pensar en CR7 y no en polonio 210, quiero saber cómo llegan los ingleses a la Arena Volgograd en lugar de leer que Reino Unido expulsa a diplomáticos rusos por un supuesto ataque con un gas nervioso. Un merecido descanso del mundo nos llega cada cuatro años y, en colectivo, vamos a aprovecharlo.
+							<br><br>
+
+							Nadie va a convencerme de que el partido España-Portugal no fue el más hermoso de los misterios, con su prólogo que me enganchó en la historia de un técnico despedido días antes del mundial. En el futbol la pregunta no es quién fue sino quién será. Apenas al minuto cuatro vimos a Ronaldo caer frente al defensa español Nacho Fernández, quien se llevó las manos a la cabeza en ademán de estas piernas no son mías. Se le concedió un penal al portugués y lo cobró con la arrogancia del detective Philip Marlowe entrando a un bar a media noche; consiguió el primer tanto para su país y el cuarto gol en el camino mundialista de Cristiano. A estas alturas yo ya había olvidado todas las noticias salidas de Rusia en los últimos diez años y sólo pensaba en Diego Costa en el minuto veinticuatro, engañando a toda la defensa portuguesa y emparejando el marcador. Las fuerzas en el campo se equilibraron y al filo del medio tiempo un balón se le escurrió al arquero español entre las manos. 2-1 portugués y Rusia, para mí, ya no se extendía más allá de aquel estadio en donde el portero español quedó en cuatro patas en el campo y yo sentía su desplome. Regresando del descanso, Costa marcó para España y ahí iban mis nervios para arriba con las manos de Fernando Hierro quien, como buen protagonista de un misterio, tuvo que entrar en una historia que a él no le tocaba. Entonces vino Nacho Fernández a cerrar su hilo de subtrama y pagar la que estaba debiendo con el 3-2 para España. La vuelta de tuerca fue a dos minutos del final, cuando Cristiano resolvió el caso con un tiro libre: adiós, muñecos, y un balón que libró las cabezas de los defensores españoles. Una aventura deliciosa. Un antídoto. Un refugio. Una persecución donde lo único que sangra son las rodillas contra el pasto. 
+							</div>
+							<div class="indepth_content_footer">
+								<div class="indepth_author" id="paulette" num="4">
+									<div class="indepth_author_img"></div>
+									<p>Paulette Jonguitud</p>
+								</div>
+							<div class="indepth_bio">
+								Narradora, autora de los libros Mildew, Son necios los fantasmas, Algunas margaritas y sus fantasmas y el Loco del Martinete.
+							</div>
+						</div>
+						<!-- comments -->
+					    <div id="facebook_thread" style="background-color: #fff; margin-top: 20px;">
+					    	<div class="fb-comments" data-href="http://juanfutbol.com/indepth/falsos-extremos-31" data-numposts="5" data-width="100%" data-colorscheme="light"></div>
+					    </div>
+					     <!-- comments -->
+						</div>
+					</div>
+				</div>
+				<div id="pregunta_s" class="indepth_anuncio_section indepth_page"  resize="false">
+					<div id="indepth_parallax_back" ></div>
+				</div>
+
+				<div id="elogio" class="indepth_page_content image_quote_4 indepth_content_top">
+					<div class="indepth_page_body" >
+						<div class="indepth_content_header">
+							<div class="indepth_day">JUNIO 16</div>
+							<div class="indepth_title_line"></div>
+							<div class="indepth_title">Elogio del juego indiferente</div>
+							<div class="indepth_author_title">por Antonio Ortuño</div>
+						</div>
+						<div class="indepth_home-element-social">
+							<a href="http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#indepth_coments_31">
+								<div class="home-element-social-comments-short">
+													</div>
+							</a>
+							<a href="javascript:sharePopUp('fb', 'https://www.facebook.com/sharer.php?s=100&p[images][0]=http://s3.amazonaws.com/stadium-azteca/page/66bf9cfb-d0b3-4698-b6ad-2052267a76b7/final/images/Top_1.png&p[url]=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo');">
+								<div class="home-element-social-share-short">
+													</div>
+							</a>
+							<a href="javascript:sharePopUp('tw', 'https://twitter.com/share?via=juanfutbol&text=Se% acabó - Falsos Extremos una reflexión de Rodrigo Márquez Tizano (@rmtizano)&url=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo');">
+								<div class="home-element-social-tweet-short">
+													</div>
+							</a>
+							<a href="mailto:?subject='Se acabó - Falsos Extremos una reflexión de Rodrigo Márquez Tizano ', historia compartida desde juanfutbol&body=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo">
+								<div class="home-element-social-email"></div>
+							</a>
+						</div>
+						<div class="indepth_text_container">
+							
+							<div class="indepth_text">
+								<div class="indepth_quote" style="font-size:23px;"><div class="indepth_quote_out"><div class="indepth_quote_in">Lo que más disfruto del Mundial es justamente lo que otros, esos fanáticos de espuma en la boca y manos crispadas, odian: los juegos de primera ronda en los que no te importan los contendientes</div></div></div>
+
+								Uno de mis primeros recuerdos del Mundial proviene de España 82. En una de las semifinales, Francia y Alemania empataron 3-3 y se fueron a penales. Aquel juego es merecidamente famoso. Alemania se fue abajo en los tiempos extra 3-1 y empató con uno de sus acostumbrados alardes de espíritu guerrero. En los penales sobrevino el drama. Stielike, de Alemania, falló un lanzamiento. La cámara se quedó fija en sus lloriqueos. Mientras, Francia erraba a su vez, fuera de cámara (el portero Harald Schumacher, que durante el partido agredió impunemente al delantero galo Battiston, se vistió de héroe, tapándole tiros a Six y a Bossis). Ganó Alemania, al final. De tanta tensión como había en el aire, me puse a llorar como un bendito: estaba por cumplir seis años. Las selecciones de Alemania y Francia nunca me han simpatizado, pero el drama de la cancha me poseyó. Rara vez he llorado tanto, en el resto de la vida, por cosas que de verdad me importaran.
+								<br><br>
+								Quizá por las secuelas de aquella tragedia, abomino de los juegos importantes: los de mis equipos y los de eliminación directa. Los veo, si no me queda más remedio, callado, resignado y sufriente, como si se tratara de una penitencia. Estoy convencido de que cada eliminación de México en octavos de final, Mundial con Mundial, me cuesta al menos un año de vida en sobresaltos, amarguras y depresión. Fuera de mi selección, mi afecto está con España, el país de mi madre. La final de Sudáfrica 2010 la vi pasar ante mis ojos como ha de haber visto San Juan ocurrir el Apocalipsis en su isla de Patmos: desencajado y tembloroso. En los tiempos extra no pude más y me salí a dar vueltas a la calle (unos vecinos, que le iban a Holanda, daban tanta lata con sus gritos que aquello hubiera podido acabar a golpes). El golazo de Iniesta con que España triunfó lo vi en la tele de la miscelánea de la vuelta y lo celebré, antes que nadie, con don Pacho, el tendero.
 								</div>
 						</div>
 					</div>
@@ -182,15 +337,15 @@
 					<div class="indepth_page_body" >
 						<div class="indepth_text_container">
 							<div class="indepth_text">
-							Por eso lo que m�s disfruto del Mundial es justamente lo que otros, esos fan�ticos de espuma en la boca y manos crispadas, odian: los juegos de primera ronda en los que no te importan los contendientes. Por eso me la pas� de f�bula mirando la paliza de Rusia a Arabia Saudita en el juego inaugural. Y por eso me entusiasma tanto la posibilidad de asomarse a los juegos de Australia, Ir�n, Corea del Sur o Islandia, repletos de jugadores que nunca volveremos a ver. A veces suceden en ellos cosas admirables: si nadie ha visto el gol que Said Al Owairan, un saudir�rabe, le anot� a B�lgica en el Mundial de 94 (uno de esos cotejos que har�an que pusiera morrito de asco un &quot;conocedor&quot;), se los recomiendo much�simo. B�squenlo en Youtube. Es el hermano gemelo del gol de Maradona a Inglaterra en M�xico 86 pero quiz� sea m�s pl�stico a�n. Puro arte elusivo y vertical. Y sin hacerme padecer ni un segundo. Ya suficiente tengo con lo que me hace sufrir el equipo tricolor.
+							Por eso lo que más disfruto del Mundial es justamente lo que otros, esos fanáticos de espuma en la boca y manos crispadas, odian: los juegos de primera ronda en los que no te importan los contendientes. Por eso me la pasé de fábula mirando la paliza de Rusia a Arabia Saudita en el juego inaugural. Y por eso me entusiasma tanto la posibilidad de asomarse a los juegos de Australia, Irán, Corea del Sur o Islandia, repletos de jugadores que nunca volveremos a ver. A veces suceden en ellos cosas admirables: si nadie ha visto el gol que Said Al Owairan, un saudirárabe, le anotó a Bélgica en el Mundial de 94 (uno de esos cotejos que harían que pusiera morrito de asco un &quot;conocedor&quot;), se los recomiendo muchísimo. Búsquenlo en Youtube. Es el hermano gemelo del gol de Maradona a Inglaterra en México 86 pero quizá sea más plástico aún. Puro arte elusivo y vertical. Y sin hacerme padecer ni un segundo. Ya suficiente tengo con lo que me hace sufrir el equipo tricolor.
 							</div>
 							<div class="indepth_content_footer">
 								<div class="indepth_author" id="antonio" num="4">
 									<div class="indepth_author_img"></div>
-									<p>Antonio Ortu�o</p>
+									<p>Antonio Ortuño</p>
 								</div>
 							<div class="indepth_bio">
-								Escritor. Ha publicado una docena de libros, traducidos a varios idiomas. Con La vaga ambici�n gan� el Premio Internacional de Narrativa Ribera del Duero en Espa�a en 2017.
+								Escritor. Ha publicado una docena de libros, traducidos a varios idiomas. Con La vaga ambición ganó el Premio Internacional de Narrativa Ribera del Duero en España en 2017.
 							</div>
 						</div>
 						<!-- comments -->
@@ -222,27 +377,27 @@
 								<div class="home-element-social-share-short">
 													</div>
 							</a>
-							<a href="javascript:sharePopUp('tw', 'https://twitter.com/share?via=juanfutbol&text=Se% acab� - Falsos Extremos una reflexi�n de Rodrigo M�rquez Tizano (@rmtizano)&url=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo');">
+							<a href="javascript:sharePopUp('tw', 'https://twitter.com/share?via=juanfutbol&text=Se% acabó - Falsos Extremos una reflexión de Rodrigo Márquez Tizano (@rmtizano)&url=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo');">
 								<div class="home-element-social-tweet-short">
 													</div>
 							</a>
-							<a href="mailto:?subject='Se acab� - Falsos Extremos una reflexi�n de Rodrigo M�rquez Tizano ', historia compartida desde juanfutbol&body=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo">
+							<a href="mailto:?subject='Se acabó - Falsos Extremos una reflexión de Rodrigo Márquez Tizano ', historia compartida desde juanfutbol&body=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo">
 								<div class="home-element-social-email"></div>
 							</a>
 						</div>
 						<div class="indepth_text_container">
 							
 							<div class="indepth_text">
-								<div class="indepth_quote" style="font-size:23px;"><div class="indepth_quote_out"><div class="indepth_quote_in">El mundial es un estado de excepci�n y uno puede permitirse despojar un poco el sentido com�n de la mente y renovar nuestra conmovedora adicci�n al desaz�n</div></div></div>
+								<div class="indepth_quote" style="font-size:23px;"><div class="indepth_quote_out"><div class="indepth_quote_in">El mundial es un estado de excepción y uno puede permitirse despojar un poco el sentido común de la mente y renovar nuestra conmovedora adicción al desazón</div></div></div>
 
-								Una de las grandes trampas sobre las que descansa el sistema de dominaci�n social y pol�tico contempor�neo tiene que ver con su muy perversa idea de lo que es la justicia. Meritocracia, es el t�rmino que acu�an los barones del capital para explicar el orden de las cosas. En un mundo tan lleno de posibilidades, si uno est� jodido, es seguramente porque as� lo desea (se lo merece, pues). Hay muchos ejemplos de personas que han logrado salir de la miseria o la ignominia: �quieres salir de tu ghetto de pobreza y/o mediocridad? �Muy f�cil! S�lo tienes que jugar futbol como Messi o rapear como Jay Z. �Quieres volverte putrimillonario de la noche a la ma�ana? No esperes m�s, s�lo es necesario tener una idea como la de Mark Zuckerberg. Es precisamente esta idea, la de meritocracia, la que empuja las agendas de &quot;desarrollo social&quot; de los nuevos paladines del neoliberalismo: curiosa trampa del destino, al igual que con la dupla Thatcher-Reagan, son una mujer (Theresa May) y un cretino histri�nico (Donnie T) los que vuelven a la carga, meritocracia por delante, para lavar las culpas de los potentados: vivimos, nos dicen, en un mundo en el que cada quien tiene lo que se merece.
+								Una de las grandes trampas sobre las que descansa el sistema de dominación social y político contemporáneo tiene que ver con su muy perversa idea de lo que es la justicia. Meritocracia, es el término que acuñan los barones del capital para explicar el orden de las cosas. En un mundo tan lleno de posibilidades, si uno está jodido, es seguramente porque así lo desea (se lo merece, pues). Hay muchos ejemplos de personas que han logrado salir de la miseria o la ignominia: ¿quieres salir de tu ghetto de pobreza y/o mediocridad? ¡Muy fácil! Sólo tienes que jugar futbol como Messi o rapear como Jay Z. ¿Quieres volverte putrimillonario de la noche a la mañana? No esperes más, sólo es necesario tener una idea como la de Mark Zuckerberg. Es precisamente esta idea, la de meritocracia, la que empuja las agendas de &quot;desarrollo social&quot; de los nuevos paladines del neoliberalismo: curiosa trampa del destino, al igual que con la dupla Thatcher-Reagan, son una mujer (Theresa May) y un cretino histriónico (Donnie T) los que vuelven a la carga, meritocracia por delante, para lavar las culpas de los potentados: vivimos, nos dicen, en un mundo en el que cada quien tiene lo que se merece.
 								<br><br>
-								Un art�culo titulado &quot;Meritocracy: the great delusion that ingrains inequality&quot; publicado el 20 de marzo del 2017 por el peri�dico The Guardian, ataja el tema y nos muestra c�mo uno de los instrumentos de los que se ha valido el sistema antes referido para cancelar sus contrapesos ha sido, como ya nos advert�a Orwell, la manipulaci�n conceptual.  
+								Un artículo titulado &quot;Meritocracy: the great delusion that ingrains inequality&quot; publicado el 20 de marzo del 2017 por el periódico The Guardian, ataja el tema y nos muestra cómo uno de los instrumentos de los que se ha valido el sistema antes referido para cancelar sus contrapesos ha sido, como ya nos advertía Orwell, la manipulación conceptual.  
 								<br><br>
-								En los cincuenta, nos recuerda la autora Jo Littler, el t�rmino &quot;meritocracia&quot; se usaba para condenar un sistema que ya perfilaba su obscena y criminal distribuci�n de la riqueza. &quot;�Por qu� alguien querr�a vivir en un mundo en el que se premia a los que m�s tienen, a los que m�s han tenido, en detrimento de los que nunca han tenido si quiera la oportunidad de tener algo?&quot;, se preguntaba entonces el soci�logo Alan Fox. Hannah Arendt, dec�a a su vez sobre la meritocracia que �sta &quot;cancela el princpio de igualdad de la misma manera que lo hace la oligarqu�a&quot;. Hoy es uno de los t�rminos favoritos de los neoliberales: meritocracia: el mundo ideal en el que uno es el capit�n de su propio destino.
+								En los cincuenta, nos recuerda la autora Jo Littler, el término &quot;meritocracia&quot; se usaba para condenar un sistema que ya perfilaba su obscena y criminal distribución de la riqueza. &quot;¿Por qué alguien querría vivir en un mundo en el que se premia a los que más tienen, a los que más han tenido, en detrimento de los que nunca han tenido si quiera la oportunidad de tener algo?&quot;, se preguntaba entonces el sociólogo Alan Fox. Hannah Arendt, decía a su vez sobre la meritocracia que ésta &quot;cancela el princpio de igualdad de la misma manera que lo hace la oligarquía&quot;. Hoy es uno de los términos favoritos de los neoliberales: meritocracia: el mundo ideal en el que uno es el capitán de su propio destino.
 								<br><br>
-								Todo esto viene a cuento porque el futbol se ha convertido, de unos a�os para ac�, en uno de los hobbies preferidos de los oligarcas. Y aunque el juego establece condiciones equitativas para todos, las bases de la competencia son todo menos parejas. El Real Madrid y el Legan�s obedecen el mismo reglamento y, bajo una �ptica muy semejante a la planteada en t�rminos sociales, se sugiere que ganar� el partido el equipo que reuna mayor m�rito entre sus jugadores. En este terreno, en el del futbol de clubes, es donde uno puede ver lo aberrante del argumento en toda su dimensi�n. �Compiten los equipos en igualdad de circunstancias? Por supuesto que no. No es lo mismo un modesto club que es operado por una cooperativa local, que uno operado con capitales que se obtuvieron a partir de pr�cticas mafiosas (como es el caso de casi todos los grandes clues del mundo). <br>
-								Salvo honrrosas excepciones (como aquella maravillosa �pica del Leicester City) y leves matices en el futbol no gana el mejor sino el que tiene (o invierte m�s dinero). 
+								Todo esto viene a cuento porque el futbol se ha convertido, de unos años para acá, en uno de los hobbies preferidos de los oligarcas. Y aunque el juego establece condiciones equitativas para todos, las bases de la competencia son todo menos parejas. El Real Madrid y el Leganés obedecen el mismo reglamento y, bajo una óptica muy semejante a la planteada en términos sociales, se sugiere que ganará el partido el equipo que reuna mayor mérito entre sus jugadores. En este terreno, en el del futbol de clubes, es donde uno puede ver lo aberrante del argumento en toda su dimensión. ¿Compiten los equipos en igualdad de circunstancias? Por supuesto que no. No es lo mismo un modesto club que es operado por una cooperativa local, que uno operado con capitales que se obtuvieron a partir de prácticas mafiosas (como es el caso de casi todos los grandes clues del mundo). <br>
+								Salvo honrrosas excepciones (como aquella maravillosa épica del Leicester City) y leves matices en el futbol no gana el mejor sino el que tiene (o invierte más dinero). 
 
 								</div>
 						</div>
@@ -255,13 +410,13 @@
 					<div class="indepth_page_body" >
 						<div class="indepth_text_container">
 							<div class="indepth_text">
-							El Mundial de Futbol escapa de cierta forma a esta l�gica. Uno de los grandes favoritos es Brasil, un pa�s secuestrado por una clase pol�tica que descabez� el proyecto socialista que lo gobernaba, lastrado por unos �ndices de pobreza y criminalidad alarmantes incluso para estados fallidos como M�xico. Uruguay puede competir en cualquier campo, cualquier d�a con Alemania. Costa Rica se meti� a cuartos de final en el mundial pasado. Y no es del todo descabellado pensar que la Conmebol pueda meter el mismo n�mero de equipos a la fase de cuartos de final que la UEFA. Lo fascinante de este torneo tiene que ver con que se desenvuelve en una especie de marco atemporal que justifica un periodo de excepci�n para todo: lo mismo para las horas en las que uno puede comenzar a beber sin ser lapidado por la culpa, que para la hip�crita idea de meritocracia deportiva que solemos observar en los torneos de clubes. Son las grandes historias las que definen los mundiales y las de �ste comenzaron a escribirse incluso antes de la patada inicial.
+							El Mundial de Futbol escapa de cierta forma a esta lógica. Uno de los grandes favoritos es Brasil, un país secuestrado por una clase política que descabezó el proyecto socialista que lo gobernaba, lastrado por unos índices de pobreza y criminalidad alarmantes incluso para estados fallidos como México. Uruguay puede competir en cualquier campo, cualquier día con Alemania. Costa Rica se metió a cuartos de final en el mundial pasado. Y no es del todo descabellado pensar que la Conmebol pueda meter el mismo número de equipos a la fase de cuartos de final que la UEFA. Lo fascinante de este torneo tiene que ver con que se desenvuelve en una especie de marco atemporal que justifica un periodo de excepción para todo: lo mismo para las horas en las que uno puede comenzar a beber sin ser lapidado por la culpa, que para la hipócrita idea de meritocracia deportiva que solemos observar en los torneos de clubes. Son las grandes historias las que definen los mundiales y las de éste comenzaron a escribirse incluso antes de la patada inicial.
 							<br><br>
-							Espa�a corri� a su t�cnico por su actitud fr�vola y desleal unos d�as antes del arranque y se cre� un caldo de cultivo para una gran historia en donde los jugadores pueden demostrar que es m�s importante la autogesti�n y el autogobierno que la din�mica vertical de control de grupo. Estoy convencido de que Espa�a ser� uno de los mejores equipos del mundial y quiz� a trav�s de esta �pica, los espa�oles (y de paso los no espa�oles tambi�n) podremos recordar lo que la acci�n colectiva puede hacer ante la adversidad.
+							España corrió a su técnico por su actitud frívola y desleal unos días antes del arranque y se creó un caldo de cultivo para una gran historia en donde los jugadores pueden demostrar que es más importante la autogestión y el autogobierno que la dinámica vertical de control de grupo. Estoy convencido de que España será uno de los mejores equipos del mundial y quizá a través de esta épica, los españoles (y de paso los no españoles también) podremos recordar lo que la acción colectiva puede hacer ante la adversidad.
 							<br><br>
-							El chico consentido del futbol mundial, Mohamed Salah, sucumbi� ante la marruller�a del mejor central del mundo (Sergio Ramos) y puso en riesgo su participaci�n en la Copa. Hoy se anuncia que ma�ana alinea contra Uruguay y ofrece a la gente de un pa�s que sufre, Egipto, la posibilidad de reclamar su derecho a la alegr�a y, por qu� no, a la esperanza.
+							El chico consentido del futbol mundial, Mohamed Salah, sucumbió ante la marrullería del mejor central del mundo (Sergio Ramos) y puso en riesgo su participación en la Copa. Hoy se anuncia que mañana alinea contra Uruguay y ofrece a la gente de un país que sufre, Egipto, la posibilidad de reclamar su derecho a la alegría y, por qué no, a la esperanza.
 							<br><br>
-							Y ya para terminar, no pod�a soslayar un comentario sobre los nuestros. Siempre asincopados, los representantes mexicas vuelven a demostrar que el timing es una mol�cula que brilla por su ausencia en el ADN nacional. Quiz� conscientes de que no habr�a muchos motivos para festejar despu�s, los nuestros se entregaron a los ardides de Baco antes. Es un lugar com�n decir que las crisis tambi�n son oportunidades. Pero a qu� m�s podemos arrimarnos ante una selecci�n tan flem�tica, carente de personalidad, chata e indescifrable como la nuestra sino a insulsos manantiales de fe. Pero ya dec�amos que el mundial es un estado de excepci�n y uno puede permitirse despojar un poco el sentido com�n de la mente y renovar nuestra conmovedora adicci�n al desaz�n. Para despecharse como los dioses de la tragedia exigen, primero hay que aprender a cancelar la realidad a trav�s de una creencia no justificada. Y ah� vamos otra vez como cada cuatro a�os. Corriendo rumbo al muro con la idea, t�cita o expl�cita, de que ahora s� la Historia nos paga todas las que nos debe: el domingo empatamos: he dicho.
+							Y ya para terminar, no podía soslayar un comentario sobre los nuestros. Siempre asincopados, los representantes mexicas vuelven a demostrar que el timing es una molécula que brilla por su ausencia en el ADN nacional. Quizá conscientes de que no habría muchos motivos para festejar después, los nuestros se entregaron a los ardides de Baco antes. Es un lugar común decir que las crisis también son oportunidades. Pero a qué más podemos arrimarnos ante una selección tan flemática, carente de personalidad, chata e indescifrable como la nuestra sino a insulsos manantiales de fe. Pero ya decíamos que el mundial es un estado de excepción y uno puede permitirse despojar un poco el sentido común de la mente y renovar nuestra conmovedora adicción al desazón. Para despecharse como los dioses de la tragedia exigen, primero hay que aprender a cancelar la realidad a través de una creencia no justificada. Y ahí vamos otra vez como cada cuatro años. Corriendo rumbo al muro con la idea, tácita o explícita, de que ahora sí la Historia nos paga todas las que nos debe: el domingo empatamos: he dicho.
 							</div>
 							<div class="indepth_content_footer">
 								<div class="indepth_author" id="diego" num="4">
@@ -269,9 +424,9 @@
 									<p>Diego Rabasa</p>
 								</div>
 							<div class="indepth_bio">
-								Es escritor y editor. Es miembro permanente del consejo editorial de Sexto Piso donde ha publicado m�s de 450 t�tulos. Su trabajo como editor le ha valido dos premios internacionales: el International Young Publisher of the Year otorgado por el British Council en el 2006 y el Premio a la Mejor Labor Editorial Cultural otorgado por el Ministerio de Cultura de Espa�a en el 2008. Sus relatos, cr�nicas y traducciones han aparecido en medios en el extranjero como The Guardian, El Pa�s o Clar�n y en m�ltiples revistas, peri�dicos y plataformas digitales en M�xico. 
+								Es escritor y editor. Es miembro permanente del consejo editorial de Sexto Piso donde ha publicado más de 450 títulos. Su trabajo como editor le ha valido dos premios internacionales: el International Young Publisher of the Year otorgado por el British Council en el 2006 y el Premio a la Mejor Labor Editorial Cultural otorgado por el Ministerio de Cultura de España en el 2008. Sus relatos, crónicas y traducciones han aparecido en medios en el extranjero como The Guardian, El País o Clarín y en múltiples revistas, periódicos y plataformas digitales en México. 
 								<br>
-								Dirigi� con Santiago Arau el cortometraje documental 19 de septiembre. Conduce el programa de literatura Telegraf�a sin hilos en Convoy Networks y es librero de La Murci�laga libros.
+								Dirigió con Santiago Arau el cortometraje documental 19 de septiembre. Conduce el programa de literatura Telegrafía sin hilos en Convoy Networks y es librero de La Murciélaga libros.
 							</div>
 						</div>
 						<!-- comments -->
@@ -292,8 +447,8 @@
 						<div class="indepth_content_header">
 							<div class="indepth_day">JUNIO 14</div>
 							<div class="indepth_title_line"></div>
-							<div class="indepth_title">�A llorar!</div>
-							<div class="indepth_author_title">por Luis Mu�oz Oliveira</div>
+							<div class="indepth_title">¡A llorar!</div>
+							<div class="indepth_author_title">por Luis Muñoz Oliveira</div>
 						</div>
 						<div class="indepth_home-element-social">
 							<a href="http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#indepth_coments_31">
@@ -304,25 +459,25 @@
 								<div class="home-element-social-share-short">
 													</div>
 							</a>
-							<a href="javascript:sharePopUp('tw', 'https://twitter.com/share?via=juanfutbol&text=Se% acab� - Falsos Extremos una reflexi�n de Rodrigo M�rquez Tizano (@rmtizano)&url=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo');">
+							<a href="javascript:sharePopUp('tw', 'https://twitter.com/share?via=juanfutbol&text=Se% acabó - Falsos Extremos una reflexión de Rodrigo Márquez Tizano (@rmtizano)&url=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo');">
 								<div class="home-element-social-tweet-short">
 													</div>
 							</a>
-							<a href="mailto:?subject='Se acab� - Falsos Extremos una reflexi�n de Rodrigo M�rquez Tizano ', historia compartida desde juanfutbol&body=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo">
+							<a href="mailto:?subject='Se acabó - Falsos Extremos una reflexión de Rodrigo Márquez Tizano ', historia compartida desde juanfutbol&body=http://juanfutbol.com/indepth/66bf9cfb-d0b3-4698-b6ad-2052267a76b7#seacabo">
 								<div class="home-element-social-email"></div>
 							</a>
 						</div>
 						<div class="indepth_text_container">
 							
 							<div class="indepth_text">
-								<div class="indepth_quote" style="font-size:23px;"><div class="indepth_quote_out"><div class="indepth_quote_in"> Durante el mundial resultar� que pejistas, priistas y frentistas celebran juntos los goles de la selecci�n. No digo los dirigentes, digo la gente, las familias. Detesto el nacionalismo, porque en general es nocivo, pero hay cierto orgullo propio que es necesario para enfrentar la vida</div></div></div>
+								<div class="indepth_quote" style="font-size:23px;"><div class="indepth_quote_out"><div class="indepth_quote_in"> Durante el mundial resultará que pejistas, priistas y frentistas celebran juntos los goles de la selección. No digo los dirigentes, digo la gente, las familias. Detesto el nacionalismo, porque en general es nocivo, pero hay cierto orgullo propio que es necesario para enfrentar la vida</div></div></div>
 
-								Unos dicen que el futbol es el opio del pueblo, que distrae de lo importante, que embrutece la mente de las personas y ayuda a que marchemos como ovejas tras las consignas de l�deres mal�ficos: &quot;quien ve futbol no piensa&quot;, desde�an el entretenimiento &quot;simpl�n&quot; de la pelotita. Si escuch�ramos �pera, me imagino que argumentan, ser�a distinto: sopranos y tenores son alta cultura, no los cabezazos ni las chilenas.
+								Unos dicen que el futbol es el opio del pueblo, que distrae de lo importante, que embrutece la mente de las personas y ayuda a que marchemos como ovejas tras las consignas de líderes maléficos: &quot;quien ve futbol no piensa&quot;, desdeñan el entretenimiento &quot;simplón&quot; de la pelotita. Si escucháramos ópera, me imagino que argumentan, sería distinto: sopranos y tenores son alta cultura, no los cabezazos ni las chilenas.
 								<br><br>
 
-								Pero no es tan sencillo clasificar la altura de los placeres: John Stuart Mill cre�a que era posible y ofreci� una prueba bastante mala. Y, claro,  desde que la propuso en su libro sobre el utilitarismo, le llovieron cr�ticas. Los europeos del siglo XIX como �l, eran muy duchos para desde�ar las culturas de los dem�s. Los ingleses victorianos despreciaban como &quot;primitivas&quot; todas aquellas costumbres que se topaban en sus viajes de colonizaci�n. Con lo dicho �no les parece rid�culo que parte de &quot;la izquierda progresista&quot; del siglo XXI act�e como ingl�s decimon�nico y desprecie el mundial de futbol? Es curioso que no vean que ser &quot;izquierda progresista&quot; y desde�ar las costumbres de los dem�s es una contradicci�n. La izquierda es inclusiva o no es izquierda.  
+								Pero no es tan sencillo clasificar la altura de los placeres: John Stuart Mill creía que era posible y ofreció una prueba bastante mala. Y, claro,  desde que la propuso en su libro sobre el utilitarismo, le llovieron críticas. Los europeos del siglo XIX como él, eran muy duchos para desdeñar las culturas de los demás. Los ingleses victorianos despreciaban como &quot;primitivas&quot; todas aquellas costumbres que se topaban en sus viajes de colonización. Con lo dicho ¿no les parece ridículo que parte de &quot;la izquierda progresista&quot; del siglo XXI actúe como inglés decimonónico y desprecie el mundial de futbol? Es curioso que no vean que ser &quot;izquierda progresista&quot; y desdeñar las costumbres de los demás es una contradicción. La izquierda es inclusiva o no es izquierda.  
 								<br><br>
-								El futbol no est� ligado con la desigualdad y la falta de crecimiento. Se puede ser un pa�s futbolero y tener altos �ndices de desarrollo: Alemania, Francia, Italia, Espa�a son buenos ejemplos. El problema es ser tan miope como para creer que la costumbre de ver futbol es responsable, aunque sea en parte, del estado de cosas en el que vivimos.  Adem�s, ante las campa�as pol�ticas y esta realidad tan s�rdida, lo �nico que muchos queremos es que empiece a rodar la pelota. Y no porque seamos incultos, indiferentes a la realidad, faltos de civismo, sino porque las campa�as han sido una verg�enza y la violencia es una pesadilla que no queremos seguir pensando. �Por qu� no vamos preferir sentarnos a ver un partido contra Alemania, que ver las amargas noticias o los insulsos debates? Al menos en el mundial tenemos la esperanza y la posibilidad (baja, pero posibilidad al fin) de ganarle a los brasile�os. En la vida cotidiana s�lo avistamos los fracasos de una sociedad que no cree en s� misma y se descompone ante el individualismo de casi todos.
+								El futbol no está ligado con la desigualdad y la falta de crecimiento. Se puede ser un país futbolero y tener altos índices de desarrollo: Alemania, Francia, Italia, España son buenos ejemplos. El problema es ser tan miope como para creer que la costumbre de ver futbol es responsable, aunque sea en parte, del estado de cosas en el que vivimos.  Además, ante las campañas políticas y esta realidad tan sórdida, lo único que muchos queremos es que empiece a rodar la pelota. Y no porque seamos incultos, indiferentes a la realidad, faltos de civismo, sino porque las campañas han sido una vergüenza y la violencia es una pesadilla que no queremos seguir pensando. ¿Por qué no vamos preferir sentarnos a ver un partido contra Alemania, que ver las amargas noticias o los insulsos debates? Al menos en el mundial tenemos la esperanza y la posibilidad (baja, pero posibilidad al fin) de ganarle a los brasileños. En la vida cotidiana sólo avistamos los fracasos de una sociedad que no cree en sí misma y se descompone ante el individualismo de casi todos.
 								</div>
 						</div>
 					</div>
@@ -334,22 +489,22 @@
 					<div class="indepth_page_body" >
 						<div class="indepth_text_container">
 							<div class="indepth_text">
-							Ya ver�n que durante el mundial resultar� que pejistas, priistas y frentistas celebran juntos los goles de la selecci�n. No digo los dirigentes, digo la gente, las familias. Detesto el nacionalismo, porque en general es nocivo, pero hay cierto orgullo propio que es necesario para enfrentar la vida. Si algo nos podr�an ense�ar los jugadores del tricolor es que es posible estar orgullosos de esforzarnos, de mirar al rival a la cara, de jugar con enjundia. Se puede perder con la cabeza en alto y tambi�n se puede ganar como cobardes. Depende de la forma en la que luches en la cancha y eso, luchar, depende de nosotros. La vida es lo que hacemos de ella.
+							Ya verán que durante el mundial resultará que pejistas, priistas y frentistas celebran juntos los goles de la selección. No digo los dirigentes, digo la gente, las familias. Detesto el nacionalismo, porque en general es nocivo, pero hay cierto orgullo propio que es necesario para enfrentar la vida. Si algo nos podrían enseñar los jugadores del tricolor es que es posible estar orgullosos de esforzarnos, de mirar al rival a la cara, de jugar con enjundia. Se puede perder con la cabeza en alto y también se puede ganar como cobardes. Depende de la forma en la que luches en la cancha y eso, luchar, depende de nosotros. La vida es lo que hacemos de ella.
 							<br><br>
 
-							Por supuesto que la FIFA, Putin, la Federaci�n Mexicana de Futbol, las televisoras, las marcas de cerveza, de refresco, de lo que ustedes se imaginen, tienen intereses econ�micos y pol�ticos en el juego. �Eso lo ensucia? No lo s�. Es f�cil idealizar el deporte amateur, esa pasi�n y entrega por el mero placer de la competencia, y a partir de ah� juzgar el futbol profesional, lleno de intereses. Es f�cil querer que los futbolistas sean seres humanos admirables que pregonen la humildad y el juego limpio.  Yo preferir�a que los futbolistas no fueran nunca tan soberbios como Cristiano Ronaldo, ni consumidores de prostituci�n como, se dice, nuestros seleccionados. Pero eso lo preferir�a no s�lo de los futbolistas, lo prefiero de cualquier persona. No me parece que tengamos que juzgar a los futbolistas con un criterio distinto. Son personas millonarias y famosas, pero personas al fin.
+							Por supuesto que la FIFA, Putin, la Federación Mexicana de Futbol, las televisoras, las marcas de cerveza, de refresco, de lo que ustedes se imaginen, tienen intereses económicos y políticos en el juego. ¿Eso lo ensucia? No lo sé. Es fácil idealizar el deporte amateur, esa pasión y entrega por el mero placer de la competencia, y a partir de ahí juzgar el futbol profesional, lleno de intereses. Es fácil querer que los futbolistas sean seres humanos admirables que pregonen la humildad y el juego limpio.  Yo preferiría que los futbolistas no fueran nunca tan soberbios como Cristiano Ronaldo, ni consumidores de prostitución como, se dice, nuestros seleccionados. Pero eso lo preferiría no sólo de los futbolistas, lo prefiero de cualquier persona. No me parece que tengamos que juzgar a los futbolistas con un criterio distinto. Son personas millonarias y famosas, pero personas al fin.
 							<br><br>
-							El futbol, como muchos otros deportes, ense�a a esforzarse, a desarrollar el cuerpo y la concentraci�n, a jugar en equipo, a triunfar y a perder. Distraerse unas horas no es distraerse de lo importante. Es m�s, el futbol puede ser absolutamente pol�tico: el doctor S�crates, por ejemplo, lider� al Corinthians a ponerle cara a la dictadura brasile�a. Revisen lo que fue la democracia corinthiana. Puedes escuchar �pera todos los d�as y ser un cruento dictador, y puedes dedicar el d�a a ver partidos de futbol y ser un luchador social. No es el futbol el culpable de nuestro talante moral.
+							El futbol, como muchos otros deportes, enseña a esforzarse, a desarrollar el cuerpo y la concentración, a jugar en equipo, a triunfar y a perder. Distraerse unas horas no es distraerse de lo importante. Es más, el futbol puede ser absolutamente político: el doctor Sócrates, por ejemplo, lideró al Corinthians a ponerle cara a la dictadura brasileña. Revisen lo que fue la democracia corinthiana. Puedes escuchar ópera todos los días y ser un cruento dictador, y puedes dedicar el día a ver partidos de futbol y ser un luchador social. No es el futbol el culpable de nuestro talante moral.
 							<br><br>
-							�Que ruede la pelota! y sea un mundial de juego abierto, de remontadas tremendas y de goleadas aleccionadoras. Que los jugadores lloren en la cancha el d�a de su eliminaci�n y que lloren los campeones. A llorar se�ores y se�oras, que el futbol es hermoso.
+							¡Que ruede la pelota! y sea un mundial de juego abierto, de remontadas tremendas y de goleadas aleccionadoras. Que los jugadores lloren en la cancha el día de su eliminación y que lloren los campeones. A llorar señores y señoras, que el futbol es hermoso.
 							</div>
 							<div class="indepth_content_footer">
 								<div class="indepth_author" id="luis" num="4">
 									<div class="indepth_author_img"></div>
-									<p>Luis Mu�oz Oliveira</p>
+									<p>Luis Muñoz Oliveira</p>
 								</div>
 							<div class="indepth_bio">
-								Naci� en la Ciudad de M�xico. Es fil�sofo y escritor. Imparte clases de �tica en la Facultad de Filosof�a y Forma parte del Centro de Investigaciones sobre Am�rica Latina y el Caribe de la UNAM. Sus dos novelas m�s recientes son Por la noche blanca y el oficio de la venganza.</a>
+								Nació en la Ciudad de México. Es filósofo y escritor. Imparte clases de Ética en la Facultad de Filosofía y Forma parte del Centro de Investigaciones sobre América Latina y el Caribe de la UNAM. Sus dos novelas más recientes son Por la noche blanca y el oficio de la venganza.</a>
 							</div>
 						</div>
 						<!-- comments -->
@@ -387,10 +542,10 @@
 			<!--div id="indepth_more_texts" class="indepth_page_content">
 				<div class="indepth_page_body">
 				<div class="indepth_more_title">
-					M�S HISTORIAS A PROFUNDIDAD
+					MÁS HISTORIAS A PROFUNDIDAD
 				</div>
 				<div class="indepth_more_container" >
-					<a href="http://juanfutbol.com/indepth/12ce2c90-f26d-4e5b-b0d0-2cdc41a99d8e"> <img src="images/IMG In1.jpg" alt="futbol, �aliado de las reformas?" width="264" height="159"></a>
+					<a href="http://juanfutbol.com/indepth/12ce2c90-f26d-4e5b-b0d0-2cdc41a99d8e"> <img src="images/IMG In1.jpg" alt="futbol, ¿aliado de las reformas?" width="264" height="159"></a>
 					<a href="http://juanfutbol.com/indepth/c5693223-3732-4bea-8b9d-3186fe40d149"><img src="images/IMG In2.jpg" alt="32 razones antimundialistas" width="264" height="159"></a>
 					<a href="http://juanfutbol.com/indepth/15958dd6-7888-4d65-ab79-10de6aabdd40"><img src="images/IMG In3.jpg" alt="negocio de ligulla" width="264" height="159"></a>
 				</div>
@@ -400,9 +555,9 @@
 			<div id="indepth_footer" class="indepth_page" width="1920" resize="false">
 				<div class="indepth_page_body">
 					<div class="indepth_text">
-						 <span style="text-align: center">Ilustrador: Ricardo Romero - Programador: Angel Gonz�lez</span>
+						 <span style="text-align: center">Ilustrador: Ricardo Romero - Programador: Angel González</span>
 						 <br>
-						<div class="Copyright">Copyright � 2018 | juanfutbol</div>
+						<div class="Copyright">Copyright © 2018 | juanfutbol</div>
 					</div>
 				</div>
 			</div>
@@ -412,5 +567,5 @@
 			<script src="js/waypoints.min.js"></script>
 			<script type="text/javascript" src="js/indepth2.js?v=1.0.28"></script>
 		</scripts>
-	</body>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"776fdbc7a2","applicationID":"5733224","transactionName":"MwZbYRNSW0FQAUJbWgpMeFYVWlpcHhFCXUcFBFwaDlFfV1IWRUZaFgJeUE5XWkVfDllTUQsBU1ACRw==","queueTime":0,"applicationTime":694,"atts":"H0FYF1tISE8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </html>

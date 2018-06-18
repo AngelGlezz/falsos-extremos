@@ -652,12 +652,20 @@
 	background-image: url("../images/top_30_sp.jpg");
 }
 
-#elogio #indepth_parallax_mid{
-	background-image: url("../images/top_33.jpg");
+#elogio_s #indepth_parallax_back{
+	background-image: url("../images/text_33.jpg");
 }
 
 #meritocracia_s #indepth_parallax_back{
 	background-image: url("../images/top_32.jpg");
+}
+
+#pregunta_s #indepth_parallax_back{
+	background-image: url("../images/text_34.jpg");
+}
+
+#perder_s #indepth_parallax_back{
+	background-image: url("../images/text_35.jpg");
 }
 
 #_separador #indepth_parallax_mid{
@@ -668,8 +676,16 @@
 	background-image: url("../images/text_32.jpg");
 }
 
-#elogio_s #indepth_parallax_back{
-	background-image: url("../images/text_33.jpg");
+#elogio #indepth_parallax_mid{
+	background-image: url("../images/top_33.jpg");
+}
+
+#pregunta #indepth_parallax_mid{
+	background-image: url("../images/top_34.jpg");
+}
+
+#perder #indepth_parallax_mid{
+	background-image: url("../images/top_35.jpg");
 }
 
 #indepth_anuncio img{
