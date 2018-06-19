@@ -668,6 +668,10 @@
 	background-image: url("../images/text_35.jpg");
 }
 
+#felicidad_s #indepth_parallax_back{
+	background-image: url("../images/text_36.jpg");
+}
+
 #_separador #indepth_parallax_mid{
 	background-image: url("../images/text_31.jpg");
 }
@@ -686,6 +690,10 @@
 
 #perder #indepth_parallax_mid{
 	background-image: url("../images/top_35.jpg");
+}
+
+#felicidad #indepth_parallax_mid{
+	background-image: url("../images/top_36.jpg");
 }
 
 #indepth_anuncio img{
