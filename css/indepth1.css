@@ -752,6 +752,8 @@
 
 .indepth_mini_ball .h{
 	height: 100%;
+	position: relative;
+	left: -23px;
 }
 
 .indepth_mini_ball .w{
