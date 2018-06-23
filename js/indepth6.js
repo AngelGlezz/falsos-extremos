@@ -208,6 +208,11 @@ $(document).ready(function(){
 		$("html, body").animate({ scrollTop: 0 }, 3000);
 		return false;
 	});
+
+	var iOS = /iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+	if (iOS == true) {
+		$("#indepth_parallax_mid").css({'background-attachment':'initial'});
+	}
 });
 
 $(window).on("resize", function(){
