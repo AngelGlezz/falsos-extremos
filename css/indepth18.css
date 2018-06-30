@@ -708,6 +708,10 @@
 	background-image: url("../images/text_45.jpg");
 }
 
+#dios_s #indepth_parallax_back{
+	background-image: url("../images/text_46.jpg");
+}
+
 #_separador #indepth_parallax_mid{
 	background-image: url("../images/text_31.jpg");
 }
@@ -766,6 +770,10 @@
 
 #cabalas #indepth_parallax_mid{
 	background-image: url("../images/top_45.jpg");
+}
+
+#dios #indepth_parallax_mid{
+	background-image: url("../images/top_46.jpg");
 }
 
 #indepth_anuncio img{
