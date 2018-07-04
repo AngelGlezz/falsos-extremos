@@ -728,6 +728,10 @@
 	background-image: url("../images/text_50.jpg");
 }
 
+#mismo_s #indepth_parallax_back{
+	background-image: url("../images/text_51.jpg");
+}
+
 #_separador #indepth_parallax_mid{
 	background-image: url("../images/text_31.jpg");
 }
@@ -806,6 +810,10 @@
 
 #suenos #indepth_parallax_mid{
 	background-image: url("../images/top_50.jpg");
+}
+
+#mismo #indepth_parallax_mid{
+	background-image: url("../images/top_51.jpg");
 }
 
 #indepth_anuncio img{
