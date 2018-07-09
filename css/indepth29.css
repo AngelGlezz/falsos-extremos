@@ -740,6 +740,14 @@
 	background-image: url("../images/text_53.jpg");
 }
 
+#pelota_s #indepth_parallax_back{
+	background-image: url("../images/text_54.jpg");
+}
+
+#mundial_s #indepth_parallax_back{
+	background-image: url("../images/text_55.jpg");
+}
+
 #_separador #indepth_parallax_mid{
 	background-image: url("../images/text_31.jpg");
 }
@@ -830,6 +838,14 @@
 
 #garra #indepth_parallax_mid{
 	background-image: url("../images/top_53.jpg");
+}
+
+#pelota #indepth_parallax_mid{
+	background-image: url("../images/top_54.jpg");
+}
+
+#mundial #indepth_parallax_mid{
+	background-image: url("../images/top_55.jpg");
 }
 
 #indepth_anuncio img{
