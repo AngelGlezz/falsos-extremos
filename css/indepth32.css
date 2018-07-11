@@ -748,6 +748,10 @@
 	background-image: url("../images/text_55.jpg");
 }
 
+#asados_s #indepth_parallax_back{
+	background-image: url("../images/text_56.jpg");
+}
+
 #_separador #indepth_parallax_mid{
 	background-image: url("../images/text_31.jpg");
 }
@@ -846,6 +850,10 @@
 
 #mundial #indepth_parallax_mid{
 	background-image: url("../images/top_55.jpg");
+}
+
+#asados #indepth_parallax_mid{
+	background-image: url("../images/top_56.jpg");
 }
 
 #indepth_anuncio img{
@@ -1109,7 +1117,7 @@
 	
 	.indepth_page_content .indepth_quote div{
 	/* margin-left: 40px; */
-		width: 100%;
+		width: 100%!important;
 		padding: 0px;
 	}
 	
@@ -1124,7 +1132,7 @@
 	}
 	
 	.indepth_page_content .indepth_quote {
-		width: 96%;
+		width: 96%!important;
 		height: auto;
 		float: left;
 		margin-left: 0px;
@@ -1183,44 +1191,12 @@
 	background-position: 50%;
 }
 	#content {
-position: relative;
-background-color: white;
-}
+		position: relative;
+		background-color: white;
+	}
 
-	#anecdoticos_separador #indepth_parallax_back {
-		background-position: 30% 50%;
-	}
-	
-	#revancha_separador #indepth_parallax_back {
-		background-position: 30% 50%;
-	}
-	
-	#tres_separador #indepth_parallax_back {
-		background-position: 25% 50%;
-	}
-	
-	#deriva_separador #indepth_parallax_back {
-		background-position: 75% 50%;
-	}
-	
-	#corona_separador #indepth_parallax_back {
-		background-position: 75% 50%;
-	}
-	
-	#memorial_separador #indepth_parallax_back {
-		background-position: 96% 50%;
-	}
-	
-	#canibal_separador #indepth_parallax_back {
-		background-position: 20% 50%;
-	}
-	
-	#gritos_separador #indepth_parallax_back {
-		background-position: 80% 50%;
-	}
-	
-	#especialista_separador #indepth_parallax_back {
-		background-position: 65% 50%;
+	#asados_s #indepth_parallax_back{
+		background-position: 72%;
 	}
 
 	#var_s {
