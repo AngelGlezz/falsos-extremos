@@ -752,6 +752,14 @@
 	background-image: url("../images/text_56.jpg");
 }
 
+#croata_s #indepth_parallax_back{
+	background-image: url("../images/text_57.jpg");
+}
+
+#adios_s #indepth_parallax_back{
+	background-image: url("../images/text_58.jpg");
+}
+
 #_separador #indepth_parallax_mid{
 	background-image: url("../images/text_31.jpg");
 }
@@ -854,6 +862,14 @@
 
 #asados #indepth_parallax_mid{
 	background-image: url("../images/top_56.jpg");
+}
+
+#croata #indepth_parallax_mid{
+	background-image: url("../images/top_57.jpg");
+}
+
+#adios #indepth_parallax_mid{
+	background-image: url("../images/top_58.jpg");
 }
 
 #indepth_anuncio img{
